@@ -1,0 +1,16 @@
+# Steps of this project
+
+1. Virtual Environment: Make sure it's activated before running Uvicorn. On macOS/Linux: source <your_env_name>/bin/activate
+2. Create a Backend API (using Python's fastAPI and the SwaggerUI: http://127.0.0.1:8000/docs) & run the API by using this command in the Terminal: uvicorn main:app --reload
+3. install required libraries
+4. Create a React App
+- In Terminal, run these commands: 
+    - cd posture-tracking     # change directory to "posture-tracking"
+    - npm install             # reinstall dependencies of React
+    - npx create-react-app .  # create a new React app in current directory (using ".") rather than creating a new one 
+    - npm start               # start the development server
+5. Install Tensorflow Models for PoseNet API in React Web App: npm install @tensorflow/tfjs @tensorflow-models/posenet
+6. Troubleshooting:
+- if nodes creates problems, try the commands: 
+    - "export NODE_OPTIONS=--openssl-legacy-provider"
+    - before using "npm start"

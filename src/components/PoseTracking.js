@@ -9,7 +9,7 @@ const PoseTracking = () => {
 
   useEffect(() => {
     const loadPoseNet = async () => {
-      await tf.setBackend('webgl'); // Optionally set backend
+      await tf.setBackend('webgl'); //optionally set backend
       const net = await posenet.load();
       setLoading(false);
       detectPose(net);
@@ -26,9 +26,9 @@ const PoseTracking = () => {
         const pose = await net.estimateSinglePose(video, {
           flipHorizontal: false,
         });
-        setPoses(pose.keypoints); // Store pose data
+        setPoses(pose.keypoints); // store pose data
       }
-      requestAnimationFrame(detect); // Keep detecting
+      requestAnimationFrame(detect); // keep detecting
     };
 
     detect();
@@ -83,7 +83,7 @@ const PoseTracking = () => {
 
 export default PoseTracking;
 
-// Video Element: We create a video element that connects to the webcam (videoRef).
+// Video Element: Creates a video element that connects to the webcam (videoRef).
 // PoseNet Setup: PoseNet is loaded asynchronously, and once loaded, it continuously estimates the poses on each video frame.
-// Keypoint Detection: We use net.estimateSinglePose to get the positions of various body parts, and store those keypoints in the poses state.
+// Keypoint Detection: Use net.estimateSinglePose to get the positions of various body parts, and store those keypoints in the poses state.
 // Rendering Pose Data: The detected keypoints (e.g., wrist, elbow, nose) are displayed in the component's UI.

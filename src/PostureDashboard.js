@@ -3,13 +3,13 @@ import './PostureDashboard.css';
 
 const PostureDashboard = ({ score }) => {
   const normalizedScore = Math.min(10, Math.max(0, parseFloat(score) || 0));
-  const rotation = (normalizedScore / 10) * 180 - 90; // Map 0-10 to -90 to 90 degrees
+  const rotation = (normalizedScore / 10) * 180 - 90; // map 0-10 to -90 to 90 degrees
   
-  // Define color based on score
+  // define colour based on score
   const getColor = () => {
-    if (normalizedScore >= 8) return '#4CAF50'; // Green
-    if (normalizedScore >= 5) return '#FFC107'; // Yellow/Amber
-    return '#F44336'; // Red
+    if (normalizedScore >= 8) return '#4CAF50'; // green
+    if (normalizedScore >= 5) return '#FFC107'; // yellow/amber
+    return '#F44336'; // red
   };
 
   return (

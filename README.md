@@ -12,4 +12,5 @@ Personalised adivce for drummers' posture correction will be shown after each re
 
 # Contents:
 
-- files + purpose
+- src/ — folder with all the project’s code and styles that make the website work.
+- public/ — folder for files that are directly used by the website, like the main HTML page, images, and the site’s favicon.

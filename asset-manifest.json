@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/WebApp-DrummerPosture/static/css/main.afd72bfa.css",
+    "main.js": "/WebApp-DrummerPosture/static/js/main.cb369349.js",
+    "static/js/453.bed07c21.chunk.js": "/WebApp-DrummerPosture/static/js/453.bed07c21.chunk.js",
+    "index.html": "/WebApp-DrummerPosture/index.html",
+    "main.afd72bfa.css.map": "/WebApp-DrummerPosture/static/css/main.afd72bfa.css.map",
+    "main.cb369349.js.map": "/WebApp-DrummerPosture/static/js/main.cb369349.js.map",
+    "453.bed07c21.chunk.js.map": "/WebApp-DrummerPosture/static/js/453.bed07c21.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afd72bfa.css",
+    "static/js/main.cb369349.js"
+  ]
+}

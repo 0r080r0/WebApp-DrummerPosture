@@ -12,7 +12,7 @@ from sqlalchemy.exc import SQLAlchemyError
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",  # Replace with your React app's URL
+    "http://localhost:3000",  # replace with the actual React app's URL
 ]
 
 app.add_middleware(
@@ -25,11 +25,11 @@ app.add_middleware(
 
 # SQLAlchemy setup
 DATABASE_URL = "sqlite:///./drumming_posture.db"
-engine = create_engine(DATABASE_URL)  # Removed connect_args for production
+engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# Models for Database
+# models for Database
 class DrummingData(Base):
     __tablename__ = "drumming_data"
     id = Column(Integer, primary_key=True, index=True)
@@ -45,17 +45,17 @@ class PostureData(Base):
     feedback = Column(String)
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
 
-# Create tables
+# create tables
 Base.metadata.create_all(bind=engine)
 
-# Pydantic Models for request/response validation
+# Pydantic models for request/response validation
 class DrummingDataIn(BaseModel):
     session_date: datetime.datetime
     duration_minutes: int
     tempo_bpm: int
     notes: Optional[str] = None
 
-class DrummingDataOut(DrummingDataIn): # Separate model for output
+class DrummingDataOut(DrummingDataIn): # separate model for output
     id: int
 
 class PostureDataIn(BaseModel):
@@ -63,16 +63,16 @@ class PostureDataIn(BaseModel):
     feedback: str
     timestamp: datetime.datetime
 
-class PostureDataOut(PostureDataIn): # Separate model for output
+class PostureDataOut(PostureDataIn): # separate model for output
     id: int
 
 # Posture API Integration (replace with actual posture API endpoint)
-POSTURE_API_URL = "YOUR_POSTURE_API_ENDPOINT"  # Replace with actual URL
+POSTURE_API_URL = "YOUR_POSTURE_API_ENDPOINT"  # replace with the actual URL
 
 def get_posture_data(image_url: str):
     """Fetches posture data from an external API."""
     try:
-        response = requests.post(POSTURE_API_URL, json={"image_url": image_url})  # Adjust as needed
+        response = requests.post(POSTURE_API_URL, json={"image_url": image_url})
         response.raise_for_status()
         return PostureDataIn(**response.json())
     except requests.exceptions.RequestException as e:
@@ -82,7 +82,7 @@ def get_posture_data(image_url: str):
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"An unexpected error occurred: {e}")
 
-# Dependency for getting the database session
+# dependency for getting the database session
 def get_db():
     db = SessionLocal()
     try:
@@ -118,9 +118,9 @@ async def check_posture(image_url: str, db: Session = Depends(get_db)):
     if not posture_data:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid image or posture API error.")
     
-    # Add posture feedback based on the score from PoseNet
+    # add posture feedback based on the score from PoseNet
     feedback = "Good posture" if posture_data.posture_score >= 5 else "Poor posture"
-    posture_data.feedback = feedback  # Update feedback to be returned
+    posture_data.feedback = feedback  # update feedback to be returned
 
     db_posture_data = PostureData(**posture_data.dict())
     try:
@@ -137,11 +137,11 @@ async def read_posture_data(user_id: str = None, skip: int = 0, limit: int = 10,
     """Retrieves stored posture data with pagination and optional user_id filtering."""
     query = db.query(PostureData).offset(skip).limit(limit)
     if user_id:
-        query = query.filter(PostureData.user_id == user_id)  # Filter by user_id if provided
+        query = query.filter(PostureData.user_id == user_id)  # filter by user_id if provided
     posture_data = query.all()
     return posture_data
 
-# Dummy Posture API for testing
+# dummy Posture API for testing
 @app.post("/dummy_posture_api/", response_model=PostureDataOut)
 async def dummy_posture_api(image_url: str):
     """Dummy posture API for testing."""

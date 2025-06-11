@@ -1,4 +1,4 @@
-# Prototype Web Application for Drummers' Posture Correction (with ongoing Refinements)
+# Prototype Web Application for Drummers' Posture Correction (ongoing)
 
 Link to the Live App: https://0r080r0.github.io/WebApp-DrummerPosture/
 

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/WebApp-DrummerPosture/static/css/main.e6c13ad2.css",
+    "main.js": "/WebApp-DrummerPosture/static/js/main.0b54a208.js",
+    "static/js/842.61093007.chunk.js": "/WebApp-DrummerPosture/static/js/842.61093007.chunk.js",
+    "static/js/607.10201179.chunk.js": "/WebApp-DrummerPosture/static/js/607.10201179.chunk.js",
+    "static/js/453.a04b9556.chunk.js": "/WebApp-DrummerPosture/static/js/453.a04b9556.chunk.js",
+    "static/js/238.2c55a971.chunk.js": "/WebApp-DrummerPosture/static/js/238.2c55a971.chunk.js",
+    "static/js/448.9793a857.chunk.js": "/WebApp-DrummerPosture/static/js/448.9793a857.chunk.js",
+    "static/js/60.865fd63a.chunk.js": "/WebApp-DrummerPosture/static/js/60.865fd63a.chunk.js",
+    "index.html": "/WebApp-DrummerPosture/index.html",
+    "main.e6c13ad2.css.map": "/WebApp-DrummerPosture/static/css/main.e6c13ad2.css.map",
+    "main.0b54a208.js.map": "/WebApp-DrummerPosture/static/js/main.0b54a208.js.map",
+    "453.a04b9556.chunk.js.map": "/WebApp-DrummerPosture/static/js/453.a04b9556.chunk.js.map",
+    "238.2c55a971.chunk.js.map": "/WebApp-DrummerPosture/static/js/238.2c55a971.chunk.js.map",
+    "448.9793a857.chunk.js.map": "/WebApp-DrummerPosture/static/js/448.9793a857.chunk.js.map",
+    "60.865fd63a.chunk.js.map": "/WebApp-DrummerPosture/static/js/60.865fd63a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.0b54a208.js"
+  ]
+}
